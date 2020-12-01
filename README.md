@@ -12,6 +12,7 @@ $ git clone https://github.com/olechanastazja/keycloak_django.git
 
 Keycloak + PostgreSQL
 ```
+$ cd poleval_auth
 # docker-compose up
 ```
 
@@ -26,7 +27,7 @@ $ source venv/bin/activate
 
 $ pip install -r requirements.txt
 
-$ cd poleval_auth/poleval_auth & python3 manage.py migrate 
+$ cd poleval_auth & python3 manage.py migrate 
 
 $ python3 manage.py runserver
 ```
