@@ -543,3 +543,21 @@ form#kc-select-back-form div.login-pf-social-section {
     border-radius: 5px; !important;
 }
 
+/*.login-pf-page > .btn-block {*/
+/*    margin-top: 0;*/
+/*    background-color: rgb(121, 217, 255); !important;*/
+/*    border-color: whitesmoke;  !important;*/
+/*    border-radius: 5px; !important;*/
+/*}*/
+#kc-form-buttons .btn-primary {
+    margin-top: 0;
+    background-color: rgb(121, 217, 255); !important;
+    border-radius: 8px;
+    background-image: none;
+    border-color: whitesmoke;  !important;
+}
+#kc-form-buttons .btn-primary:hover {
+   border-color: #0099d3;
+}
+
+

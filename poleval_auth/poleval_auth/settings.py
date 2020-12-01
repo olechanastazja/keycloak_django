@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '&txxdo&4x7d6(@w2p8u&drxv^7+j%0o2bzo_@#-)o!@k_8j@xr'
-KEYCLOAK_SECRET = '95bc17bc-e20c-44b8-b60a-bf9a551fcb7e'
+CLEINT_ID = 'poleval'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -151,7 +151,7 @@ OIDC_AUTH = {
     # `aud` is only required, when you set it as an essential claim.
     'OIDC_CLAIMS_OPTIONS': {
         'aud': {
-            'values': ['poleval_auth'],
+            'values': ['poleval'],
             'essential': True,
         }
     },
@@ -194,4 +194,5 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
     "http://127.0.0.1:3000",
     "http://localhost:3000",
+    "http://localhost:3002",
 ]

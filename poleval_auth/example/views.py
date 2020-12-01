@@ -1,10 +1,9 @@
 from django.contrib.auth import get_user_model
-from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.conf import settings
-
+from django.http import HttpResponse
 
 
 @api_view()
@@ -17,12 +16,11 @@ def hello_world(request):
 @api_view(['GET', 'POST'])
 @permission_classes([AllowAny])
 def create_user(request):
-    print(request)
     User = get_user_model()
-    secret = request.data['secret']
-    if secret == settings.KEYCLOAK_SECRET:
-        email = request.data['userData']['email']
-        username = request.data['userData']['preferred_username']
+    client_id = request.data['client_id']
+    if client_id == settings['CLIENT_ID']:
+        email = request.data['user_data']['email']
+        username = request.data['user_data']['preferred_username']
         new_user = User.objects.create(email=email, username=username)
     return Response({"user": "created"})
 
@@ -31,9 +29,16 @@ def create_user(request):
 @api_view(['GET', 'POST'])
 def user_exists(request):
     User = get_user_model()
-    secret = request.data['secret']
-    if secret == settings.KEYCLOAK_SECRET:
-        email = request.data['email']
-        user = get_object_or_404(User, email=email)
-    return Response({"message": "user created"})
+    client_id = request.data['client_id']
+    user = None
+    if client_id == settings['CLIENT_ID']:
+        email = request.data['user_data']['email']
+        try:
+            user = User.objects.get(email=email)
+        except User.DoesNotExist:
+            user = None
+    if user is None:
+        return HttpResponse(status=204)
+    return Response({"message": "user exists"})
+
 
