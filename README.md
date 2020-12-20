@@ -21,7 +21,7 @@ equivalent.
 The DRF application in available on port 8000. It'a a backend application only. To check if it's working as expected
 you can user Postman or curl.
 
-#####Example requests
+##### Example requests
 
 Create a user:
 ```
