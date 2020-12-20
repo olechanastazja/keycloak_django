@@ -1,10 +1,9 @@
 ## Keycloak + Django REST Framework
 
-
-Biblioteka, której używam do integracji z Keycloak z wykorzystaniem OpenId Connect: 
+Library for DRF - Keycloak integration using OpenId Connect: 
 https://github.com/ByteInternet/drf-oidc-auth
  
-#### Instalacja
+#### Installation
 
 ```
 $ git clone https://github.com/olechanastazja/keycloak_django.git
@@ -16,7 +15,7 @@ $ cd keycloak_django
 # docker-compose up
 ```
 
-Keycloak będzie dostępny na porcie 8080, hasło i login dla admina są w docker-compose
+Keycloak should be ready to user on port 8080, example login and password for admin user are in docker-compose
 
 Django + SQLite3
 
@@ -34,11 +33,7 @@ $ python3 manage.py migrate
 $ python3 manage.py runserver
 ```
 
-Aplikacja DRF jest będzie dostępna na porcie 8000. To oczywiście sam backend więc nie wiem czy
-będziesz chciał uruchamiać, instukcja na wszelki wypadek. Zawsze można coś potestować Postmanem albo curlem. 
-
-Kod odpowiedzialny za przykładowy request z autoryzacją (hello_world) i tworzenie użytkownika znajduje w 
-keycloak_django/poleval_auth/example/views.py
-
+The DRF application in available on port 8000. It'a a backend application only. To check if it's working as expected
+you can user Postman or curl.
 
    
