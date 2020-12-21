@@ -11,7 +11,7 @@ $ cd keycloak_django
 # docker-compose up
 ```
 
-Keycloak should be ready to user on port 8080, example login and password for admin user are in docker-compose
+Keycloak should be ready to use on port 8080, example login and password for admin user are in docker-compose
 
 Keycloak uses PostgreSQL database and DRF uses sqlite3 for now. 
 The presented solution handles the situation when users are created in two databases. 
